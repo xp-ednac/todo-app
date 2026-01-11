@@ -78,8 +78,10 @@ Este projeto implementa uma aplicação Todo List full-stack utilizando o ecossi
 #### **Terminais:**
 # Terminal 1 — Back End
 clj -M:run
+Servidor: http://localhost:3000
 
 # Terminal 2 — Frontend
 npx shadow-cljs watch app
+Interface: http://localhost:8000
 
 
