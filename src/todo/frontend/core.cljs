@@ -87,9 +87,8 @@
     "Adicionar"]])
 
 ;; A Lista (recebe uma lista de "todos" como argumento)
-(defn todo-list [] ;; <-- Argumento "todos" REMOVIDO
+(defn todo-list []
   [:ul.todo-list
-   ;; (Leitura): O 'for' agora observa o @app-state
    (for [todo (:todos @app-state)]
      ^{:key (:id todo)}
      [:li.todo-item
