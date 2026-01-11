@@ -97,6 +97,4 @@ clj -M:run
 npx shadow-cljs watch app
 ````
 ---
-
----
 Interface: http://localhost:8000
