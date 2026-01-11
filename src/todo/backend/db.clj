@@ -1,31 +1,51 @@
-(ns todo.backend.db)
+(ns todo.backend.db
+  (:require
+   [next.jdbc :as jdbc]
+   [next.jdbc.sql :as sql]))
 
 ;; -------------------------
-;; "Banco de dados" em memória
+;; Configuração do banco
 ;; -------------------------
-(defonce todos-db (atom []))
-(defonce id-counter (atom 0))
+(def db-spec
+  {:dbtype "sqlite"
+   :dbname "prod.db"})
+
+(def datasource
+  (jdbc/get-datasource db-spec))
 
 ;; -------------------------
 ;; Inicialização do banco
 ;; -------------------------
-(defn initialize-database!
-  "Inicializa o banco de dados (em memória por enquanto)."
-  []
-  (reset! todos-db [])
-  (reset! id-counter 0)
-  (println "Banco de dados inicializado."))
+(defn initialize-database! []
+  (jdbc/execute!
+   datasource
+   ["CREATE TABLE IF NOT EXISTS todos (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT NOT NULL,
+      description TEXT,
+      completed INTEGER DEFAULT 0,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )"])
+  (println "Banco SQLite inicializado (prod.db)."))
 
 ;; -------------------------
 ;; Operações
 ;; -------------------------
 (defn get-all-todos []
-  @todos-db)
+  (sql/query datasource ["SELECT * FROM todos"]))
 
-(defn create-todo [todo]
-  (let [id (swap! id-counter inc)
-        new-todo (assoc todo
-                        :id id
-                        :completed false)]
-    (swap! todos-db conj new-todo)
-    new-todo))
+(defn create-todo [{:keys [title description]}]
+  (sql/insert!
+   datasource
+   :todos
+   {:title title
+    :description description
+    :completed 0}))
+
+(defn toggle-todo! [id]
+  (jdbc/execute!
+   datasource
+   ["UPDATE todos
+     SET completed = CASE completed WHEN 0 THEN 1 ELSE 0 END
+     WHERE id = ?"
+    id]))

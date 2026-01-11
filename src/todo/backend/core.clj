@@ -20,7 +20,12 @@
 
     ["/todos"
      {:get  {:handler handler/list-todos-handler}
-      :post {:handler handler/create-todo-handler}}]]))
+      :post {:handler handler/create-todo-handler}}]
+
+    ["/todos/:id/toggle"
+     {:post {:handler handler/toggle-todo-handler}}]
+    ]))
+
 
 ;; -------------------------
 ;; 2. Aplicação Ring

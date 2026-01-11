@@ -1,21 +1,23 @@
-{:paths ["src" "resources"]
+{
+ :paths ["src" "resources"]
 
  :deps
  {org.clojure/clojure {:mvn/version "1.11.1"}
-
-  ;; Backend / API
   ring/ring-core {:mvn/version "1.12.2"}
   ring/ring-jetty-adapter {:mvn/version "1.12.2"}
   ring/ring-json {:mvn/version "0.5.1"}
   metosin/reitit-ring {:mvn/version "0.7.0"}
-
   ring-cors/ring-cors {:mvn/version "0.1.13"}
   seancorfield/next.jdbc {:mvn/version "1.2.659"}
   org.xerial/sqlite-jdbc {:mvn/version "3.45.3.0"}
+  ;; <-- corrigido
 
-  ;; Frontend (shadow + reagent)
+  ;; dependências do frontend
   thheller/shadow-cljs {:mvn/version "2.26.2"}
   reagent/reagent {:mvn/version "2.0.0"}}
 
  :aliases
- {:run {:main-opts ["-m" "todo.backend.core"]}}}
+ {:run {:main-opts ["-m" "todo.backend.core"]}}
+
+ 
+}
