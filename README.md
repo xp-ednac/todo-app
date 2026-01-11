@@ -80,19 +80,17 @@ Este projeto implementa uma aplicação Todo List full-stack utilizando o ecossi
 - Node.js + npm
 - SQLite3
 
----
-
 ### 🚀 Execução
+#### **Terminais:**
 
-#### **Terminal 1 – Backend**
-
+Back End
 ```bash
 clj -M:run
 Servidor disponível em:
 http://localhost:3000
 
-### **Terminal 2 – Front End**
-bash
+Frontend
+```bash
 npx shadow-cljs watch app
 Interface disponível em:
 http://localhost:8000
