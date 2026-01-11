@@ -14,15 +14,6 @@ O objetivo do trabalho foi reproduzir, passo a passo, a construção de uma apli
 - Tutorial principal:  
   https://www.notion.so/2a5cce975093807aa9f0f0cb0cf69645?pvs=21
 
-- Fase 4 – Conectando Frontend e Backend:  
-  https://profsergiocosta.notion.site/Fase-4-Conectando-o-Frontend-ao-Backend-2a5cce97509380a5a5e2e54246ed0125?pvs=25
-
-- Fase 5 – Persistência Real (Banco de Dados):  
-  https://profsergiocosta.notion.site/Fase-5-Persist-ncia-Real-Banco-de-Dados
-
-- Fase 6 – Marcar como feito e melhorias visuais:  
-  https://profsergiocosta.notion.site/Fase-6-Adicionando-Marcar-como-Feito-e-melhorando-o-visual-2a5cce9750938005a9ece6ac9bbf0dd1
-
 ---
 
 ## 📌 Observação sobre o Histórico de Commits
@@ -85,8 +76,10 @@ Este projeto implementa uma aplicação Todo List full-stack utilizando o ecossi
 ### 🚀 Execução
 
 #### **Terminais:**
-
-### Back End
-
-```bash
+# Terminal 1 — Back End
 clj -M:run
+
+# Terminal 2 — Frontend
+npx shadow-cljs watch app
+
+
