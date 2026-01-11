@@ -1,6 +1,15 @@
-# Todo App em Clojure – Atividade da Unidade 2
+### UNIVERSIDADE FEDERAL DO MARANHÃO - UFMA
+### CENTRO DE CIÊNCIAS EXATAS E TECNOLOGIA – CCET
+### DEPARTAMENTO DO CURSO DE ENGENHARIA DA COMPUTAÇÃO
+### DISCIPLINA: TÓPICOS DE ENGENHARIA DA COMPUTAÇÃO II - 2025.2
 
-**Aluno(a): Edna Cristina Durans Santos**
+### ATIVIDADE: 📋 Todo App em Clojure
+
+#### Docente
+Dr. Sérgio Souza Costa
+
+#### 👩‍🎓 Nome discente
+Edna Cristina Durans Santos
 
 Este repositório contém o projeto desenvolvido para a Unidade 2 da disciplina, seguindo o tutorial  
 **“Clojure/ClojureScript: Construindo uma Aplicação Persistente e Reativa”**.
@@ -75,13 +84,19 @@ Este projeto implementa uma aplicação Todo List full-stack utilizando o ecossi
 
 ### 🚀 Execução
 
-#### **Terminais:**
-# Terminal 1 — Back End
+#### 💻 Terminais
+
+##### ▶️ Terminal 1 — Back-end
+
+```bash
 clj -M:run
-Servidor: http://localhost:3000
-
-# Terminal 2 — Frontend
+````
+---
+##### ▶️ Terminal 2 - Front End
+```bash
 npx shadow-cljs watch app
+````
+---
+
+---
 Interface: http://localhost:8000
-
-
